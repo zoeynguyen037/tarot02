@@ -298,8 +298,8 @@ function upd() {{
 function go() {{
   const v = document.getElementById('q').value.trim();
   if (!v) return;
-  const base = window.parent.location.href.split('?')[0];
-  window.parent.location.href = base + '?q=' + encodeURIComponent(v);
+  
+  window.parent.location.href = '/?q=' + encodeURIComponent(v);
 }}
 </script>
 """
@@ -361,8 +361,8 @@ font-size:11px;letter-spacing:0.18em;text-transform:uppercase;padding:10px 20px;
 </div>
 <script>
 function go(qs) {
-  const base = window.parent.location.href.split('?')[0];
-  window.parent.location.href = base + '?' + qs;
+  
+  window.parent.location.href = '/?' + qs;
 }
 function start() { go('step=shuffle'); }
 function back()  { go('step=restart'); }
@@ -447,8 +447,8 @@ const timer = setInterval(animate, 380);
 
 function go(qs) {
   clearInterval(timer);
-  const base = window.parent.location.href.split('?')[0];
-  window.parent.location.href = base + '?' + qs;
+  
+  window.parent.location.href = '/?' + qs;
 }
 function done() { go('step=pick'); }
 function back() { go('step=restart'); }
@@ -572,13 +572,13 @@ function updateFan() {
 }
 
 function submit() {
-  const base = window.parent.location.href.split('?')[0];
-  window.parent.location.href = base + '?picked=' + picked.join(',');
+  
+  window.parent.location.href = '/?picked=' + picked.join(',');
 }
 
 function back() {
-  const base = window.parent.location.href.split('?')[0];
-  window.parent.location.href = base + '?step=shuffle';
+  
+  window.parent.location.href = '/?step=shuffle';
 }
 </script>
 """
@@ -795,13 +795,13 @@ object-fit:cover;border-radius:7px;${{CARDS[i].reversed ? 'transform:rotate(180d
 }}
 
 function back() {{
-  const base = window.parent.location.href.split('?')[0];
-  window.parent.location.href = base + '?step=pick';
+  
+  window.parent.location.href = '/?step=pick';
 }}
 
 function restart() {{
-  const base = window.parent.location.href.split('?')[0];
-  window.parent.location.href = base + '?step=restart';
+  
+  window.parent.location.href = '/?step=restart';
 }}
 
 render();
